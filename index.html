@@ -1,11 +1,215 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/jisce-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="JISCE Assistant — AI Chatbot for JIS College of Engineering, Kalyani" />
-    <title>JISCE Assistant | JIS College of Engineering</title>
+
+    <!-- ═══════════════════════════════════════════
+         PRIMARY META TAGS
+    ═══════════════════════════════════════════ -->
+    <title>JISCE Assistant | AI Chatbot for JIS College of Engineering, Kalyani</title>
+    <meta name="title" content="JISCE Assistant | AI Chatbot for JIS College of Engineering, Kalyani" />
+    <meta
+      name="description"
+      content="JISCE Assistant is a domain-restricted college AI chatbot built on a fine-tuned Small Language Model (SLM) using RAG architecture. We benchmarked leading open-source LLMs — LLaMA, Mistral, Gemma, Phi — and distilled the best into a lightweight LLaMA-3.1-8B-Instant model via Groq, trained exclusively on JIS College of Engineering (JISCE), Kalyani data. Built with the MERN stack."
+    />
+    <meta
+      name="keywords"
+      content="JISCE Assistant, JIS College of Engineering, JISCE AI chatbot, college AI assistant, RAG chatbot, small language model, SLM, LLaMA 3.1, Groq API, MERN stack, Kalyani college chatbot, domain restricted AI, open source LLM comparison, Rajdeep Seal, Apurba Dutta, retrieval augmented generation, JISCE Kalyani"
+    />
+    <meta name="author" content="Rajdeep Seal, Apurba Dutta" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
+    <meta name="category" content="Education, Artificial Intelligence, College Chatbot" />
+    <meta name="classification" content="Education" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+
+    <!-- ═══════════════════════════════════════════
+         FAVICON & TOUCH ICONS
+    ═══════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="./public/jis-logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0a2463" />
+    <meta name="msapplication-TileColor" content="#0a2463" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH / FACEBOOK
+    ═══════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jisce-ai-assistant.vercel.app/" />
+    <meta property="og:site_name" content="JISCE Assistant" />
+    <meta property="og:title" content="JISCE Assistant | AI Chatbot for JIS College of Engineering" />
+    <meta
+      property="og:description"
+      content="We benchmarked multiple open-source LLMs (LLaMA, Mistral, Gemma, Phi) and distilled the best-performing model into a domain-specific SLM for JIS College of Engineering, Kalyani. Powered by RAG with JISCE institutional data, served via Groq's LLaMA-3.1-8B-Instant API, and deployed on a full MERN stack. A next-generation college AI assistant — accurate, fast, and context-aware."
+    />
+    <meta property="og:image" content="https://i.ibb.co/cKh9vBRv/OG-IMAGE.png" />
+    <meta property="og:image:secure_url" content="https://i.ibb.co/cKh9vBRv/OG-IMAGE.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="JISCE Assistant — Domain-specific AI chatbot for JIS College of Engineering, Kalyani built on RAG and SLM"
+    />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jisce_official" />
+    <meta name="twitter:creator" content="@rajdeepseal_dev" />
+    <meta name="twitter:url" content="https://jisce-ai-assistant.vercel.app/" />
+    <meta name="twitter:title" content="JISCE Assistant | AI Chatbot for JIS College of Engineering" />
+    <meta
+      name="twitter:description"
+      content="A domain-restricted college AI assistant built by comparing open-source LLMs and fine-tuning a SLM using RAG on JISCE data. Stack: MERN + Groq LLaMA-3.1-8B-Instant. By Rajdeep Seal & Apurba Dutta."
+    />
+    <meta name="twitter:image" content="https://i.ibb.co/cKh9vBRv/OG-IMAGE.png" />
+    <meta
+      name="twitter:image:alt"
+      content="JISCE Assistant — AI chatbot powered by RAG and SLM for JIS College of Engineering"
+    />
+    <meta name="twitter:label1" content="Built with" />
+    <meta name="twitter:data1" content="MERN Stack + Groq LLaMA-3.1-8B" />
+    <meta name="twitter:label2" content="Architecture" />
+    <meta name="twitter:data2" content="RAG + Domain-Specific SLM" />
+
+    <!-- ═══════════════════════════════════════════
+         LINKEDIN / OPEN GRAPH EXTENDED
+    ═══════════════════════════════════════════ -->
+    <meta property="article:author" content="Rajdeep Seal" />
+    <meta property="article:author" content="Apurba Dutta" />
+    <meta property="article:tag" content="Artificial Intelligence" />
+    <meta property="article:tag" content="RAG" />
+    <meta property="article:tag" content="SLM" />
+    <meta property="article:tag" content="MERN Stack" />
+    <meta property="article:tag" content="LLaMA" />
+    <meta property="article:tag" content="Groq" />
+    <meta property="article:tag" content="College AI" />
+    <meta property="article:tag" content="JIS College of Engineering" />
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — JSON-LD (Schema.org)
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JISCE Assistant",
+      "url": "https://jisce-ai-assistant.vercel.app/",
+      "description": "A domain-restricted AI chatbot for JIS College of Engineering, Kalyani. Built by comparing open-source LLMs (LLaMA, Mistral, Gemma, Phi) and converting the best-performing model into a Small Language Model (SLM) using Retrieval-Augmented Generation (RAG) trained on JISCE institutional data. Deployed on a MERN stack using Groq's LLaMA-3.1-8B-Instant API.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Rajdeep Seal",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "JIS College of Engineering",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kalyani",
+              "addressRegion": "West Bengal",
+              "addressCountry": "IN"
+            }
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "Apurba Dutta",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "JIS College of Engineering",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Kalyani",
+              "addressRegion": "West Bengal",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      ],
+      "creator": [
+        { "@type": "Person", "name": "Rajdeep Seal" },
+        { "@type": "Person", "name": "Apurba Dutta" }
+      ],
+      "about": {
+        "@type": "CollegeOrUniversity",
+        "name": "JIS College of Engineering",
+        "alternateName": "JISCE",
+        "url": "https://www.jiscollege.ac.in/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kalyani",
+          "addressRegion": "West Bengal",
+          "postalCode": "741235",
+          "addressCountry": "IN"
+        }
+      },
+      "keywords": "JISCE, AI chatbot, RAG, SLM, LLaMA, Groq, MERN, college assistant, JIS College of Engineering",
+      "inLanguage": "en",
+      "image": "https://i.ibb.co/cKh9vBRv/OG-IMAGE.png",
+      "softwareVersion": "1.0.0",
+      "programmingLanguage": ["JavaScript", "React", "Node.js", "Express", "MongoDB"],
+      "runtimePlatform": "Node.js"
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         BREADCRUMB STRUCTURED DATA
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jisce-ai-assistant.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "JISCE AI Assistant",
+          "item": "https://jisce-ai-assistant.vercel.app/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         CANONICAL & ALTERNATE LINKS
+    ═══════════════════════════════════════════ -->
+    <link rel="canonical" href="https://jisce-ai-assistant.vercel.app/" />
+    <link rel="alternate" hreflang="en-in" href="https://jisce-ai-assistant.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://jisce-ai-assistant.vercel.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://jisce-ai-assistant.vercel.app/" />
+
+    <!-- ═══════════════════════════════════════════
+         PERFORMANCE HINTS
+    ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.groq.com" />
   </head>
   <body>
     <div id="root"></div>
