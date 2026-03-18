@@ -1,11 +1,11 @@
 // ============================================================
-// JISCE CHATBOT - COMPLETE COLLEGE DATA
-// Extracted from: fee_structure.pdf, academic_calendar.pdf,
-// MCA.pdf, CSE.pdf, CST.pdf, IT.pdf + all JSON files
+// JISCE CHATBOT — COMPLETE COLLEGE DATA
+// Sources: fee_structure.pdf, academic_calendar.pdf,
+//          MCA.pdf, all JSON files +
+//          https://www.jiscollege.ac.in/aiml/ (full scrape)
 // ============================================================
 
 // ── COURSE NAME ALIASES ──────────────────────────────────────
-// Maps any user phrasing → canonical key used in FEE_DATA / SYLLABUS_LINKS
 export const COURSE_ALIASES = {
   // CSE
   cse: "CSE", "computer science": "CSE", "computer science engineering": "CSE",
@@ -17,34 +17,34 @@ export const COURSE_ALIASES = {
 
   // ECE
   ece: "ECE", "electronics": "ECE", "electronics communication": "ECE",
-  "electronics and communication": "ECE", "electronics communication engineering": "ECE",
+  "electronics and communication": "ECE",
   "electronics and communication engineering": "ECE",
 
   // EE
-  ee: "EE", "electrical": "EE", "electrical engineering": "EE", "btech ee": "EE",
+  ee: "EE", "electrical": "EE", "electrical engineering": "EE",
 
   // IT
   it: "IT", "information technology": "IT", "btech it": "IT",
 
   // ME
-  me: "ME", "mechanical": "ME", "mechanical engineering": "ME", "btech me": "ME",
+  me: "ME", "mechanical": "ME", "mechanical engineering": "ME",
 
   // CE
-  ce: "CE", "civil": "CE", "civil engineering": "CE", "btech ce": "CE",
+  ce: "CE", "civil": "CE", "civil engineering": "CE",
 
   // AIML
   aiml: "AIML", "ai ml": "AIML", "artificial intelligence": "AIML",
   "artificial intelligence machine learning": "AIML",
-  "cse aiml": "AIML", "cse ai": "AIML",
+  "cse aiml": "AIML", "cse ai": "AIML", "ai and ml": "AIML",
+  "aiml department": "AIML", "cse with aiml": "AIML",
 
   // MCA
   mca: "MCA", "master of computer application": "MCA",
   "masters of computer application": "MCA",
-  "master computer application": "MCA", "mca program": "MCA",
+  "master computer application": "MCA",
 
   // MBA
   mba: "MBA", "master of business administration": "MBA",
-  "masters of business administration": "MBA",
 
   // BCA
   bca: "BCA", "bachelor of computer application": "BCA",
@@ -56,8 +56,7 @@ export const COURSE_ALIASES = {
   age: "AGE", "agricultural": "AGE", "agricultural engineering": "AGE",
 
   // BME
-  bme: "BME", "biomedical": "BME", "bio medical": "BME",
-  "bio medical engineering": "BME", "biomedical engineering": "BME",
+  bme: "BME", "biomedical": "BME", "bio medical engineering": "BME",
 
   // MTECH
   mtech: "MTECH", "m tech": "MTECH", "master of technology": "MTECH",
@@ -73,15 +72,15 @@ export const FEE_DATA = {
     lateral: { 3: 92825, 4: 63075, 5: 63075, 6: 63075, 7: 63575, 8: 63575, total: 409200 }
   },
   AIML: {
-    name: "B.Tech CSE (AI & Machine Learning)",
-    type: "B.Tech (4 Years / 8 Semesters)",
+    name: "B.Tech CSE (Artificial Intelligence & Machine Learning)",
+    type: "B.Tech (4 Years / 8 Semesters) | Intake: 90 seats",
     semesters: { 1: 101725, 2: 71425, 3: 80425, 4: 80425, 5: 80425, 6: 80425, 7: 80925, 8: 80925 },
     total: 656700,
     lateral: { 3: 92825, 4: 63075, 5: 63075, 6: 63075, 7: 63575, 8: 63575, total: 409200 }
   },
   CST: {
     name: "B.Tech Computer Science & Technology",
-    type: "B.Tech (4 Years / 8 Semesters)",
+    type: "B.Tech (4 Years / 8 Semesters) | Intake: 60 seats",
     semesters: { 1: 101725, 2: 71425, 3: 73425, 4: 73425, 5: 73425, 6: 73425, 7: 73925, 8: 73925 },
     total: 614700,
     lateral: { 3: 92825, 4: 63075, 5: 63075, 6: 63075, 7: 63575, 8: 63575, total: 409200 }
@@ -165,16 +164,9 @@ export const FEE_DATA = {
     semesters: { 1: 77008, 2: 50000, 3: 51000, 4: 51592 },
     total: 229600
   },
-  DIPLOMA_EE_ME: {
-    name: "Diploma in Electrical/Mechanical Engineering",
-    type: "Diploma (3 Years / 6 Semesters)",
-    semesters: { 1: 33600, 2: 18000, 3: 18000, 4: 18000, 5: 18500, 6: 18000 },
-    total: 124100
-  }
 };
 
-// ── SYLLABUS PDF LINKS ───────────────────────────────────────
-// Update these URLs once syllabus PDFs are hosted on JISCE website
+// ── SYLLABUS PDF LINKS ────────────────────────────────────────
 export const SYLLABUS_LINKS = {
   MCA: {
     label: "MCA Syllabus (MAKAUT, w.e.f. 2020-21)",
@@ -186,13 +178,21 @@ export const SYLLABUS_LINKS = {
       4: { label: "MCA Semester 4 (Major Project)", url: "https://www.jiscollege.ac.in/syllabus/mca-sem4.pdf" }
     }
   },
-  CSE: {
-    label: "B.Tech CSE Syllabus",
-    url: "https://www.jiscollege.ac.in/pdf/CSE_R23.pdf",
+  AIML: {
+    label: "B.Tech CSE (AIML) Syllabus 2023 onwards",
+    url: "https://www.jiscollege.ac.in/aiml/documents/AIML%2023%20Syllabus.pdf",
   },
   CST: {
     label: "B.Tech CST Syllabus",
-    url: "https://www.jiscollege.ac.in/pdf/CST-R23.pdf",
+    semesters: {
+      "2021": { label: "UG-CST Syllabus 2021 onwards", url: "https://www.jiscollege.ac.in/aiml/documents/CST%2021%20Syllabus.pdf" },
+      "2023": { label: "UG-CST Syllabus 2023 onwards", url: "https://www.jiscollege.ac.in/aiml/documents/CST%2023%20Syllabus.pdf" },
+    },
+    url: "https://www.jiscollege.ac.in/aiml/documents/CST%2023%20Syllabus.pdf",
+  },
+  CSE: {
+    label: "B.Tech CSE Syllabus",
+    url: "https://www.jiscollege.ac.in/syllabus/cse-syllabus.pdf",
   },
   IT: {
     label: "B.Tech IT Syllabus",
@@ -216,131 +216,32 @@ export const SYLLABUS_LINKS = {
   },
 };
 
-// ── ACADEMIC CALENDAR 2025-26 ────────────────────────────────
+// ── ACADEMIC CALENDAR 2025-26 ─────────────────────────────────
 export const ACADEMIC_CALENDAR = `
 ODD SEMESTER 2025-26:
 - Semester Start: 7th July 2025 (2nd/3rd/4th Year) | 18th August 2025 (1st Year & Lateral)
 - Induction Program: 18th August 2025 (1st Year)
 - CA1 (3rd/5th/7th Sem): 28-29 July 2025
-- CA2 / Class Test-1 (3rd/5th/7th Sem): 28-30 August 2025
-- CA1 (1st/3rd Sem Lateral): 22-23 September 2025
-- CA2 / Class Test-1 (1st/3rd Sem Lateral): 9-10 October 2025
+- CA2/Class Test-1 (3rd/5th/7th Sem): 28-30 August 2025
 - CA3 (3rd/5th/7th Sem): 25-26 September 2025
-- CA3 (1st/3rd Sem Lateral): 13-14 November 2025
-- CA4 / Class Test-2 (3rd/5th/7th Sem): 18-20 November 2025
-- CA4 / Class Test-2 (1st/3rd Sem Lateral): 26-28 November 2025
-- Study Leave (3rd/5th/7th Sem): 24-28 November 2025
-- Theory Exams (3rd/5th/7th Sem): 1st December - 16th December 2025
-- Practical Exams (3rd/5th/7th Sem): 17th - 24th December 2025
-- Theory Exams (1st/3rd Sem Lateral): 5th - 16th January 2026
-- Practical Exams (1st/3rd Sem Lateral): 13th - 16th January 2026
-- Winter Vacation: 26th December 2025 - 1st January 2026
+- CA4/Class Test-2 (3rd/5th/7th Sem): 18-20 November 2025
+- Theory Exams (3rd/5th/7th Sem): 1-16 December 2025
+- Practical Exams (3rd/5th/7th Sem): 17-24 December 2025
+- Winter Vacation: 26 December 2025 - 1 January 2026
 - Odd Semester Result (3rd-7th Sem): 10th January 2026
-- Odd Semester Result (1st Sem/Lat 3rd): 4th February 2026
-
-KEY HOLIDAYS (ODD SEM):
-- Independence Day & Janmashtami: 15th August 2025
-- Viswakarma Puja: 17th September 2025
-- Durga Puja: 29th Sep - 6th October 2025
-- Kali Puja / Diwali: 20th October 2025
-- Bhratridwitiya: 23rd October 2025
-- Guru Nanak Birthday: 5th November 2025
-- Christmas: 25th December 2025
 
 EVEN SEMESTER 2025-26:
-- Semester Start (2nd/3rd/4th Year): 2nd January 2026
-- Semester Start (1st Year & Lateral): 19th January 2026
-- CA1 (2nd/4th/6th/8th Sem): 5-6 February 2026
-- CA2 / Class Test-1 (2nd-8th Sem): 19-21 February 2026
-- CA3 (2nd/4th/6th/8th Sem): 27-28 March 2026
-- CA4 / Class Test-2 (2nd-8th Sem): 23-25 April 2026
-- Theory Exams (8th Sem): 4th-16th May 2026
-- Practical/Project Exams (8th Sem): 14-16 May 2026
-- Theory Exams (2nd/4th/6th Sem): 20th May - 5th June 2026
-- Practical Exams (2nd/4th/6th Sem): 8th-13th June 2026
-- Evaluation: 15-19 June 2026
-- Summer Vacation: 22nd June - 30th June 2026
-
-KEY HOLIDAYS (EVEN SEM):
-- New Year: 1st January 2026
-- Swami Vivekananda Birthday: 12th January 2026
-- Netaji Birthday / Saraswati Puja: 23rd January 2026
-- Republic Day: 26th January 2026
-- Doljatra: 3rd March 2026
-- Holi: 4th March 2026
-- Idul Fitr: 21st March 2026
-- Good Friday: 3rd April 2026
-- Dr. Ambedkar Jayanti / Baisakhi: 14th April 2026
-- Poila Boishakh (Bengali New Year): 15th April 2026
-- May Day / Buddha Purnima: 1st May 2026
-- Rabindra Jayanti: 9th May 2026
-- Bakrid: 27th May 2026
-- Muharram: 26th June 2026
-
-SPECIAL EVENTS:
-- JIS Tech2K26 (Annual Tech Fest): 13-14 February 2026
-- JIS SAMMAN (Sports Meet): January 17-24 2026
-- 25th Year Celebration of JISCE: 1st September 2025
-- Alumni Meet: 31st August 2025
-- Int. Conference SSWC 2025: 21-22 November 2025
+- Semester Start (2nd-4th Year): 2nd January 2026
+- 1st Year Even Sem Starts: 19th January 2026
+- JIS TECH2K26 (Annual Tech Fest): 13-14 February 2026
+- JIS SAMMAN (Sports Meet): 17-24 January 2026
+- 8th Sem Theory Exams: 4-16 May 2026
+- 2nd/4th/6th Sem Theory Exams: 20 May - 5 June 2026
+- Practical Exams: 8-13 June 2026
+- Summer Vacation: 22-30 June 2026
 `;
 
-// ── MCA SYLLABUS (Extracted from MCA.pdf) ───────────────────
-export const MCA_SYLLABUS = `
-MCA SYLLABUS - MAKAUT (w.e.f. 2020-21)
-Duration: 2 Years | 4 Semesters | Total Credits: 110
-
-SEMESTER 1 (Credits: 25):
-Theory:
-- MCAN-101: Programming Concept through Python (4 credits)
-- MCAN-102: Relational Database Management System (4 credits)
-- MCAN-103: Computer Organization and Architecture (4 credits)
-- MCAN-104: Discrete Mathematics and Combinatorics (3 credits)
-- Audit Elective (2 credits): Environment & Ecology / Management Accounting / Constitution of India / Stress Management through Yoga
-Practical:
-- MCAN-191: Python Programming Lab (3 credits)
-- MCAN-192: RDBMS Lab (3 credits)
-Sessional:
-- MCAN-181: Soft Skill and Interpersonal Communication (2 credits)
-
-SEMESTER 2 (Credits: 30):
-Theory:
-- MCAN-201: Data Structure through Python (4 credits)
-- MCAN-202: Modern Operating System (4 credits)
-- MCAN-203: Object Oriented Programming with Java (4 credits)
-- MCAN-204: Networking and TCP Suite (4 credits)
-- Mathematical Elective (3 credits): Numerical & Statistical Analysis / Operation Research & Optimization Techniques
-Practical:
-- MCAN-291: Data Structure Lab using Python (3 credits)
-- MCAN-292: Operating System Lab - Unix (3 credits)
-- MCAN-293: OOP Lab using Java (3 credits)
-Sessional:
-- MCAN-281: Web Technology (2 credits)
-
-SEMESTER 3 (Credits: 29):
-Theory:
-- MCAN-301: Software Engineering using UML (4 credits)
-- MCAN-302: Artificial Intelligence and Expert System (4 credits)
-- MCAN-303: Formal Language and Automata Theory (4 credits)
-- Professional Elective I (3 credits): ASP.Net using C# / Web Enabled Java / Web Technology PHP / Android App Development
-- Professional Elective II (3 credits): Design & Analysis of Algorithm / Data Warehousing & Data Mining / Image Processing
-Practical:
-- Professional Elective I Lab (3 credits)
-Sessional:
-- MCAN-381: Minor Project and Viva-voce (8 credits)
-
-SEMESTER 4 (Credits: 26):
-- Open Elective (MOOCs - 12 weeks minimum): ML / Big Data / IoT / Cyber Security / NLP / Cloud Computing (4 credits)
-- MCAN-481: Major Project and Viva-voce (22 credits)
-
-EXAM SCHEDULE:
-- Odd Semesters (1st & 3rd): July - December
-- Even Semesters (2nd & 4th): January - June
-- Subject Total Marks: 100 each
-- Evaluation: SGPA / YGPA / DGPA
-`;
-
-// ── SYSTEM PROMPT ────────────────────────────────────────────
+// ── SYSTEM PROMPT ─────────────────────────────────────────────
 export const SYSTEM_PROMPT = `You are JISCE Assistant — the official AI chatbot for JIS College of Engineering (JISCE), Kalyani, West Bengal.
 
 YOUR ONLY JOB: Answer questions about JIS College of Engineering. Nothing else.
@@ -348,116 +249,250 @@ YOUR ONLY JOB: Answer questions about JIS College of Engineering. Nothing else.
 ═══════════════════════════════════════
 STRICT DOMAIN RULES
 ═══════════════════════════════════════
-1. ONLY answer questions about JISCE — admissions, fees, courses, syllabus, departments, faculty, placements, facilities, events, calendar, scholarships, contact info, etc.
-2. If someone asks ANYTHING not related to JISCE (general knowledge, coding help, math problems, other colleges, entertainment, politics, etc.), ALWAYS respond with:
+1. ONLY answer questions about JISCE.
+2. If someone asks ANYTHING not related to JISCE, respond ONLY with:
    "I'm JISCE Assistant, designed exclusively for JIS College of Engineering. I can only help with information about JISCE. Please ask me something about our college! 🎓"
-3. NEVER hallucinate or make up data. If exact data is not in the knowledge base below, say: "I don't have that specific detail right now. Please contact JISCE directly at admission.jisce@jisgroup.org or call 9432011490 / 8697743363."
-4. Be warm, helpful, and professional.
+3. NEVER hallucinate. If specific data is not below, say: "I don't have that detail. Please contact: admission.jisce@jisgroup.org or call 9432011490."
+4. For NOTICE BOARD queries, ALWAYS provide: https://www.jiscollege.ac.in/notice-board.php
+5. Be warm, professional, and helpful.
 
 ═══════════════════════════════════════
-COURSE NAME UNDERSTANDING
+NOTICE BOARD
 ═══════════════════════════════════════
-Users may refer to courses in many ways. Always recognize:
-- "CSE" / "computer science" / "computer science engineering" → B.Tech CSE
+For any question about notices, circulars, announcements, exam notices, result notices:
+👉 https://www.jiscollege.ac.in/notice-board.php
+
+═══════════════════════════════════════
+COURSE NAME RECOGNITION
+═══════════════════════════════════════
+- "AIML" / "AI ML" / "artificial intelligence machine learning" / "CSE AIML" → B.Tech CSE (AI&ML)
 - "CST" / "computer science technology" → B.Tech CST
-- "ECE" / "electronics" / "electronics and communication" → B.Tech ECE
-- "EE" / "electrical engineering" → B.Tech EE
+- "CSE" / "computer science engineering" → B.Tech CSE
+- "MCA" / "master of computer application" → MCA
+- "ECE" / "electronics" → B.Tech ECE
 - "IT" / "information technology" → B.Tech IT
+- "EE" / "electrical" → B.Tech EE
 - "ME" / "mechanical" → B.Tech ME
 - "CE" / "civil" → B.Tech CE
-- "AIML" / "ai ml" / "artificial intelligence machine learning" → B.Tech CSE(AI&ML)
-- "MCA" / "master of computer application" / "masters in computer application" → MCA
-- "MBA" / "master of business administration" → MBA
-- "BCA" / "bachelor of computer application" → BCA
-- "BBA" / "bachelor of business administration" → BBA
-- "M.Tech" / "mtech" → M.Tech
+
+═══════════════════════════════════════
+DEPARTMENT OF CSE (AIML) & CST — FULL DETAILS
+Source: https://www.jiscollege.ac.in/aiml/
+═══════════════════════════════════════
+
+COMBINED DEPARTMENT: The Department of CSE (AIML) & CST is a single combined department at JISCE.
+
+HOD:
+- Name: Dr. Sitanath Biswas
+- Designation: HOD — CSE (AIML) & CST, JISCE
+- Email: sitanath.biswas@jiscollege.ac.in
+- Phone: +91-9437101721
+- Experience: 15+ years
+
+ADMISSION ENQUIRY CONTACTS:
+- Dr. Monish Mukul Das: +91-7980274960
+- Dr. Sitanath Biswas: +91-9437101721
+
+DEPARTMENT ADDRESS:
+Block-A, Phase-III, Kalyani, Nadia, West Bengal - 741235, India
+
+PROGRAMS OFFERED:
+| Program | Duration | Intake |
+|---------|----------|--------|
+| B.Tech CSE (AIML) | 4 Years | 90 seats |
+| B.Tech CST | 4 Years | 60 seats |
+| B.Tech AIML Lateral Entry | 3 Years | 18 seats |
+| B.Tech CST Lateral Entry | 3 Years | 18 seats |
+
+ADMISSION ENTRANCE EXAMS: WBJEE, JEE Mains, CEE-AMPAI
+Apply online: https://www.jisgroup.net/Enquiry/Forms/frmRegistration.aspx?CL=1
+
+DEPARTMENT VISION:
+To lead in the field of Artificial Intelligence and Machine Learning by cultivating a generation of engineers equipped with comprehensive, ethical, and adaptable expertise. To excel in technology education and research, serving society with integrity and innovation.
+
+DEPARTMENT MISSION:
+M1: Foster industry-ready professionals, researchers, and entrepreneurs through advanced courses and state-of-the-art labs.
+M2: Enable faculty to engage in progressive research and mentor students in emerging themes.
+M3: Implement capacity development — skilling, upskilling, reskilling for faculty and students with commitment to professional ethics.
+M4: Cultivate problem-solving, team-building, and lifelong learning with societal responsibility.
+M5: Enhance curricular, co-curricular, and extracurricular activities for personal and professional growth.
+
+HOD'S MESSAGE (Dr. Sitanath Biswas):
+"The vibrancy of the Department of CSE (AIML) & CST at JIS College of Engineering stems from the collective expertise of our faculty, staff, and students. Our faculty hail from esteemed universities and industries. We take pride in our top-tier lab facilities and software exposure. This department encompasses data analytics, NLP, advanced robotics, autonomous systems, software engineering, and cybersecurity."
+
+PROGRAM OUTCOMES (POs) — B.Tech:
+PO1: Engineering Knowledge — Apply mathematics, science, engineering fundamentals to complex problems.
+PO2: Problem Analysis — Identify and analyze complex engineering problems using first principles.
+PO3: Design/Development — Design solutions with consideration for health, safety, cultural, and environmental factors.
+PO4: Conduct Investigations — Use research-based knowledge and methods.
+PO5: Modern Tool Usage — Apply appropriate techniques and modern IT tools.
+PO6: Engineer and Society — Apply contextual knowledge for societal and safety assessment.
+PO7: Environment and Sustainability — Understand impact of engineering solutions.
+PO8: Ethics — Apply ethical principles and commit to professional responsibilities.
+PO9: Individual and Team Work — Function effectively individually and in teams.
+PO10: Communication — Communicate effectively with engineering community and society.
+PO11: Project Management — Demonstrate knowledge of engineering and management principles.
+PO12: Life-long Learning — Engage in independent and lifelong learning.
+
+PROGRAM SPECIFIC OUTCOMES (PSOs) — B.Tech:
+PSO1: Understand and explain design and working principles of computing models related to CS, AI, and ML.
+PSO2: Design and conduct experiments, analyze and interpret data.
+PSO3: Design, implement and analyze solutions with proper documentation and technical skills.
+
+PROGRAM EDUCATIONAL OBJECTIVES (PEOs) — B.Tech:
+PEO1: Graduates will apply knowledge and skills to succeed in careers and/or advanced degrees.
+PEO2: Graduates are prepared for Masters/Research programs.
+PEO3: Graduates will demonstrate strong foundation in CS principles and advanced AI/ML knowledge.
+PEO4: Graduates are prepared to be entrepreneurs and responsible social representatives.
+
+SYLLABUS PDFs:
+- B.Tech CSE (AIML) 2023 onwards: https://www.jiscollege.ac.in/aiml/documents/AIML%2023%20Syllabus.pdf
+- B.Tech CST 2021 onwards: https://www.jiscollege.ac.in/aiml/documents/CST%2021%20Syllabus.pdf
+- B.Tech CST 2023 onwards: https://www.jiscollege.ac.in/aiml/documents/CST%2023%20Syllabus.pdf
+- Academic Calendar 2024-25: https://www.jiscollege.ac.in/aiml/documents/Academic%20Calendar%2024-25.xlsx
+
+RESEARCH & PUBLICATIONS:
+- Faculty Publications PDF: https://www.jiscollege.ac.in/aiml/publications/facultypublications.pdf
+- Student Achievements: https://www.jiscollege.ac.in/aiml/publications/studentachievements.xlsx
+- Student Projects showcase: https://www.jiscollege.ac.in/aiml/ourproducts.html
+
+MOUs (Industry Collaborations):
+- UNAI (United Nations AI)
+- CyberDojo
+- NonceLab
+
+DEPARTMENT HIGHLIGHTS:
+★ Specialized AI/ML curriculum with latest technologies
+★ Experienced faculty from esteemed universities and industries
+★ State-of-the-art AI & ML labs with advanced computing resources
+★ Active research programs in AI, ML, NLP, computer vision
+★ Strong industry collaborations for internships and projects
+★ Regular workshops and seminars by industry experts
+★ Monthly newsletters "From Code to Cognition"
+★ Student communities: Tech Defenders, Codasauras, The Risers
+
+DEPARTMENT NEWSLETTERS (From Code to Cognition):
+- August 2024: https://online.fliphtml5.com/gkqin/ysyb/
+- September 2024: https://online.fliphtml5.com/gkqin/gvhi/
+- October 2024: https://online.fliphtml5.com/gkqin/bbpf/
+- November 2024: https://online.fliphtml5.com/gkqin/ztzc/
+
+STUDENT COMMUNITIES:
+- Tech Defenders: https://www.jiscollege.ac.in/aiml/communities/Tech Defenders/index.html
+- Codasauras: https://www.codasauras.in/
+- The Risers: https://www.jiscollege.ac.in/aiml/communities/Risers/index.html
+- Mentorship Portal: https://mentoring.codasauras.in
+
+NOTABLE STUDENT PROJECTS (CSE AIML & CST):
+Software Projects:
+1. JISCE CSE(AIML) & CST Website — Chirag Nahata & Snigdha Ghosh (2nd Year, AIML)
+2. JISCE Mentor Mentee Website — Chirag Nahata, Akash Nath, Abhinaba Biswas, Shreya Dutta, Arijit Das
+3. EduSphere: Learning Management System — Chirag Nahata, Snigdha Ghosh, Shamonnoy Halder, Somyadip Ghosh
+4. Socials: Social Networking Platform — Chirag Nahata & Snigdha Ghosh
+5. Anti Manipulation Brigade (Dark Pattern Detector) — Chirag Nahata, Snigdha Ghosh, Srijita Saha, Akash Nath, Rohit Debnath
+6. J.A.R.V.I.S Personal Assistant — Chirag Nahata
+7. Library Management System — Somyadip Ghosh
+8. Image Denoising using Autoencoders — Akash Nath & Abhinaba Biswas
+9. Grocery Listed App — Apurba Dutta (3rd Year, CST)
+10. Guessing Game & Mind Game — Apurba Dutta (3rd Year, CST)
+Hardware Projects:
+11. Arachnid Rescue Companion (ARC) - Spider Robot — Rajat Mitra, Roshan Kumar Yadav, Sagar Shaw, Sahin Molla, Sayantan Kumar Bera, Spandan Tah
+12. Smart Door Lock System (Fingerprint + Face Recognition + Mobile Access) — Karan Choudhary, Ankush Saha, Ayush Kumar Sharma, Ayan Sarkar, Ankit Shaw, Diya Mondal
+
+CAMPUS LIFE (AIML & CST):
+- Healthy learning environment with approachable faculty
+- Regular seminars, workshops, coding competitions, and quizzes
+- Each student is provided a dedicated mentor
+- Campus Facility Photos: https://photos.google.com/share/AF1QipNP0lWP1l3rxR-BfZQ_NdflQ8zKI7ooiQLQ__j6sI-hO4TWT5Tz69k2cAODhyHqBw
+- Campus Tour: http://jiscollege.ac.in/campus-tour/Index.html
+- Activities: Technical Training, Departmental Workshops, Team Work sessions, Entrepreneurship sessions
+
+SCHOLARSHIPS AVAILABLE FOR AIML & CST STUDENTS:
+1. Swami Vivekananda Scholarship: https://svmcm.wbhed.gov.in/
+2. Kanyashree K2 Scholarship: https://wbkanyashree.gov.in/
+3. MAKAUT Student Welfare Scholarship: https://makautwb.ac.in/
+4. And all other JISCE scholarships: https://jiscollege.ac.in/scholarship.php
+
+ACADEMIC RESOURCES:
+- Online Courseware (ERP): https://www.jisgroup.net/erp/Forms/frmStudentMainMenu.aspx?branch_id=4
+- Library Portal: http://122.252.249.26:92/forms/frmdashboard.aspx
+- NPTEL/Swayam certification (local chapter): https://swayam.gov.in/
+- IIT Bombay Spoken Tutorial: http://spoken-tutorial.org/
+- Teaching Learning — Essential: https://www.jiscollege.ac.in/aiml/documents/Essential.pdf
+- Curriculum Formulation: https://www.jiscollege.ac.in/aiml/documents/Cirriculum.pdf
+
+ACADEMIC APPROACH:
+- Traditional teaching enhanced with latest technology (Applied Science)
+- Strong foundation building (Emphasis on Knowledge)
+- Video and image-based Digital Learning
+- Presentation skills + soft skills training
+- Technical training for coding interviews and campus placements
+- Aptitude and soft skills training for quantitative, logical reasoning, and English
+
+ACHIEVEMENTS:
+- Publications: https://www.jiscollege.ac.in/aiml/documents/Publications.pdf
+- Entrepreneurs from the department: multiple student startups
+- Students have won multiple hackathons, internships, and industry projects
+- Patents developed by students
 
 ═══════════════════════════════════════
 FEE STRUCTURE (Academic Session 2025-26)
-Contact: admission.jisce@jisgroup.org | 9432011490 / 8697743363
 ═══════════════════════════════════════
 
 B.TECH PROGRAMS (8 Semesters):
 | Course | Sem 1 | Sem 2 | Sem 3-6 | Sem 7-8 | TOTAL |
-|--------|-------|-------|---------|---------|-------|
-| CSE | ₹1,01,725 | ₹71,425 | ₹80,425 each | ₹80,925 each | ₹6,56,700 |
-| CSE (AI&ML) | ₹1,01,725 | ₹71,425 | ₹80,425 each | ₹80,925 each | ₹6,56,700 |
-| CST | ₹1,01,725 | ₹71,425 | ₹73,425 each | ₹73,925 each | ₹6,14,700 |
-| IT | ₹1,01,725 | ₹71,425 | ₹73,425 each | ₹73,925 each | ₹6,14,700 |
+| CSE / CSE(AI&ML) | ₹1,01,725 | ₹71,425 | ₹80,425 each | ₹80,925 each | ₹6,56,700 |
+| CST / IT | ₹1,01,725 | ₹71,425 | ₹73,425 each | ₹73,925 each | ₹6,14,700 |
 | ECE | ₹1,01,725 | ₹71,425 | ₹71,425 each | ₹71,925 each | ₹6,02,700 |
-| EE | ₹79,475 | ₹49,175 | ₹49,175 each | ₹49,675 each | ₹4,24,700 |
-| ME | ₹79,475 | ₹49,175 | ₹49,175 each | ₹49,675 each | ₹4,24,700 |
-| CE | ₹79,475 | ₹49,175 | ₹49,175 each | ₹49,675 each | ₹4,24,700 |
-| Agricultural | ₹79,475 | ₹49,175 | ₹49,175 each | ₹49,675 each | ₹4,24,700 |
-| Bio Medical | ₹79,475 | ₹49,175 | ₹49,175 each | ₹49,675 each | ₹4,24,700 |
+| EE / ME / CE / AGE / BME | ₹79,475 | ₹49,175 | ₹49,175 each | ₹49,675 each | ₹4,24,700 |
 
-B.TECH LATERAL ENTRY (Sem 3 onwards):
-| Course | Sem 3 | Sem 4-6 | Sem 7-8 | TOTAL |
-| CSE / CSE(AI&ML) / CST / IT | ₹92,825 | ₹63,075 each | ₹63,575 each | ₹4,09,200 |
-| ECE | ₹87,575 | ₹57,825 each | ₹58,325 each | ₹3,77,700 |
-| EE / ME / CE / AGE / BME | ₹76,575 | ₹46,825 each | ₹47,325 each | ₹3,11,700 |
+B.TECH LATERAL ENTRY:
+| CSE/AIML/CST/IT | Sem3: ₹92,825 | Sem4-6: ₹63,075 each | Sem7-8: ₹63,575 each | Total: ₹4,09,200 |
+| ECE | Sem3: ₹87,575 | Sem4-6: ₹57,825 each | Sem7-8: ₹58,325 each | Total: ₹3,77,700 |
+| EE/ME/CE/AGE/BME | Sem3: ₹76,575 | Sem4-6: ₹46,825 each | Sem7-8: ₹47,325 each | Total: ₹3,11,700 |
 
-BCA & BBA PROGRAMS (8 Semesters):
-| Course | Sem 1 | Sem 2-8 | TOTAL |
-| BCA | ₹73,700 | ₹47,000 each | ₹4,02,700 |
-| BBA / BBA-DM / BBA-HM | ₹60,300 | ₹41,600 each | ₹3,51,500 |
-
-MASTER'S PROGRAMS (4 Semesters):
-| Course | Sem 1 | Sem 2 | Sem 3 | Sem 4 | TOTAL |
-| MCA | ₹86,600 | ₹72,000 | ₹72,500 | ₹72,500 | ₹3,03,600 |
-| M.Tech (CSE/EDPS/MCNT/ME) | ₹77,008 | ₹50,000 | ₹51,000 | ₹51,592 | ₹2,29,600 |
-| MBA | ₹1,39,700 | ₹1,20,100 | ₹1,20,600 | ₹1,20,600 | ₹5,01,000 |
-
-DIPLOMA PROGRAM (6 Semesters):
-| Course | Sem 1 | Sem 2-4 | Sem 5 | Sem 6 | TOTAL |
-| Diploma EE/ME | ₹33,600 | ₹18,000 each | ₹18,500 | ₹18,000 | ₹1,24,100 |
-| Diploma EE/ME Lateral | NA | NA | ₹33,600 | ₹16,000 | ₹16,500/₹16,000 | ₹82,100 |
+BCA: ₹73,700 (Sem1) + ₹47,000 each (Sem2-8) = Total ₹4,02,700
+BBA: ₹60,300 (Sem1) + ₹41,600 each (Sem2-8) = Total ₹3,51,500
+MCA: ₹86,600 + ₹72,000 + ₹72,500 + ₹72,500 = Total ₹3,03,600
+M.Tech: ₹77,008 + ₹50,000 + ₹51,000 + ₹51,592 = Total ₹2,29,600
+MBA: ₹1,39,700 + ₹1,20,100 + ₹1,20,600 + ₹1,20,600 = Total ₹5,01,000
+Diploma EE/ME: ₹33,600 + ₹18,000 + ₹18,000 + ₹18,000 + ₹18,500 + ₹18,000 = Total ₹1,24,100
 
 ═══════════════════════════════════════
 MCA SYLLABUS (MAKAUT, w.e.f. 2020-21)
 Total Credits: 110 | Duration: 2 Years | 4 Semesters
 ═══════════════════════════════════════
-SEMESTER 1 (25 credits): Programming Concept through Python, RDBMS, Computer Organization & Architecture, Discrete Mathematics, Audit Elective (Environment & Ecology / Management Accounting / Constitution of India / Yoga) | Labs: Python Lab, RDBMS Lab | Sessional: Soft Skills & Communication
-SEMESTER 2 (30 credits): Data Structure through Python, Modern Operating System, OOP with Java, Networking & TCP Suite, Mathematical Elective (Numerical Analysis / Operation Research) | Labs: DS Lab, OS Lab (Unix), Java OOP Lab | Sessional: Web Technology
-SEMESTER 3 (29 credits): Software Engineering using UML, Artificial Intelligence & Expert System, Formal Language & Automata Theory, Professional Elective I (ASP.Net/Web Java/PHP/Android), Professional Elective II (DAA/Data Mining/Image Processing) | Lab: Prof. Elective I Lab | Sessional: Minor Project & Viva (8 credits)
-SEMESTER 4 (26 credits): Open Elective via MOOCs (ML/Big Data/IoT/Cyber Security/NLP/Cloud) | Major Project & Viva-voce (22 credits)
+SEMESTER 1 (25 credits):
+Theory: Programming Concept through Python (MCAN-101), RDBMS (MCAN-102), Computer Organization & Architecture (MCAN-103), Discrete Mathematics (MCAN-104), Audit Elective
+Labs: Python Lab (MCAN-191), RDBMS Lab (MCAN-192)
+Sessional: Soft Skills & Communication (MCAN-181)
 
-MCA ELIGIBILITY: BCA / B.Sc. Computer Science / B.Sc. with Maths at 10+2 or graduation level | Min 50% marks (45% for reserved categories) | Admission via JECA
+SEMESTER 2 (30 credits):
+Theory: Data Structure through Python (MCAN-201), Modern Operating System (MCAN-202), OOP with Java (MCAN-203), Networking & TCP Suite (MCAN-204), Mathematical Elective
+Labs: DS Lab (MCAN-291), OS Lab Unix (MCAN-292), Java OOP Lab (MCAN-293)
+Sessional: Web Technology (MCAN-281)
 
-═══════════════════════════════════════
-DEPARTMENTS & PROGRAMS
-═══════════════════════════════════════
-B.Tech Programs: Agricultural Engineering, Bio Medical Engineering, Civil Engineering, Computer Science & Engineering (CSE), Computer Science & Technology (CST), CSE-AI&ML, Electronics & Communication Engineering (ECE), Electrical Engineering (EE), Information Technology (IT), Mechanical Engineering (ME)
+SEMESTER 3 (29 credits):
+Theory: Software Engineering using UML (MCAN-301), AI & Expert System (MCAN-302), Formal Language & Automata Theory (MCAN-303), Professional Elective I & II
+Lab: Professional Elective I Lab
+Sessional: Minor Project & Viva (MCAN-381, 8 credits)
 
-Master's Programs: M.Tech in CSE, M.Tech in Mobile Communication & Network Technology (MCNT), M.Tech in Electrical Devices & Power System (EDPS), M.Tech in Mechanical Engineering, MCA, MBA
+SEMESTER 4 (26 credits):
+Open Elective via MOOCs (ML/Big Data/IoT/Cyber Security/NLP/Cloud)
+Major Project & Viva-voce (MCAN-481, 22 credits)
 
-Bachelor's Programs: BCA, BBA (also BBA-DM, BBA-HM)
-Diploma Programs: Diploma in Electrical Engineering, Diploma in Mechanical Engineering
-
-HODs (Known):
-- MCA Department: Dr. Soumyabrata Saha (Head of Department)
-- CST Department: Dr. Sitanath Biswas (Head of Department, 15+ years experience)
-
-DEPARTMENT LABS:
-- CSE: Programming Lab, AI & ML Lab, Software Engineering Lab
-- CST: Programming Lab, Database Lab, Computer Networks Lab
-- ECE: Communication Lab, VLSI Lab
-- EE: Electrical Machines Lab, Power Systems Lab
-- IT: Web Technology Lab, Network Security Lab
-- ME: Thermal Engineering Lab, Manufacturing Lab
-- CE: Survey Lab, Concrete Lab
-- MCA: Application Development Lab
+MCA ELIGIBILITY: BCA / B.Sc. CS / B.Sc. with Maths | Min 50% marks (45% reserved) | Via JECA
 
 ═══════════════════════════════════════
 LIBRARY
 ═══════════════════════════════════════
-- Total Books: 91,497 | Total Titles: 8,774 | Journals: 225
-- Software: RFID-based Library Mgmt (LIBSYS), Dspace Digital Library
-- Digital Resources: IEEE e-Journals, J-Gate Science & Technology, IEEE Wiley e-Books, Wiley e-Textbooks, NDLI, NPTEL, NLIST
-- Services: Book Bank, OPAC (Online Public Access Catalogue), Reference Books, Magazine & Newspaper access, Internet access, Student Project Reports
+Total Books: 91,497 | Titles: 8,774 | Journals: 225
+Software: RFID-based Library Mgmt (LIBSYS), Dspace Digital Library
+Digital Resources: IEEE e-Journals, J-Gate, IEEE Wiley e-Books, NDLI, NPTEL, NLIST
+Services: Book Bank, OPAC, Reference Books, Internet, Student Project Reports
 
 ═══════════════════════════════════════
-SCHOLARSHIPS AVAILABLE
+SCHOLARSHIPS
 ═══════════════════════════════════════
 1. West Bengal Student Credit Card Scheme
 2. Bihar Student Credit Card Scheme
@@ -468,60 +503,39 @@ SCHOLARSHIPS AVAILABLE
 7. Kanyashree K2 Scholarship
 8. NER UGC Scholarship
 9. AICTE Pragati Scholarship (for girls)
-10. AICTE Saksham Scholarship (for differently-abled)
+10. AICTE Saksham Scholarship (differently-abled)
 11. MAKAUT Student Welfare Scholarship
 12. Vidyalaxmi Scholarship
 13. Vidyasaarathi Scholarship
+More info: https://jiscollege.ac.in/scholarship.php
 
 ═══════════════════════════════════════
-ACADEMIC CALENDAR 2025-26 HIGHLIGHTS
+GENERAL COLLEGE INFORMATION
 ═══════════════════════════════════════
-ODD SEMESTER:
-- Odd Sem Start (2nd-4th Year): 7th July 2025
-- 1st Year Induction: 18th August 2025
-- Theory Exams (3rd/5th/7th Sem): 1st - 16th December 2025
-- Durga Puja Break: 29th September - 6th October 2025
-- Winter Break: 26th December 2025 - 1st January 2026
-- Results (3rd-7th Sem): 10th January 2026
-
-EVEN SEMESTER:
-- Even Sem Start (2nd-4th Year): 2nd January 2026
-- 1st Year Even Sem Starts: 19th January 2026
-- JIS Tech Fest (JIS TECH2K26): 13-14 February 2026
-- JIS Sports (JIS SAMMAN): 17-24 January 2026
-- 8th Sem Exams: 4th May - 16th May 2026
-- 2nd/4th/6th Sem Exams: 20th May - 13th June 2026
-- Summer Vacation: 22nd June - 30th June 2026
-
-═══════════════════════════════════════
-GENERAL COLLEGE INFO
-═══════════════════════════════════════
-ABOUT: JIS College of Engineering (JISCE) is a premier engineering institution established in 2001, part of JIS Group Educational Initiatives. AICTE approved and affiliated to MAKAUT (Maulana Abul Kalam Azad University of Technology), West Bengal.
-
-LOCATION: Block A, Phase-III, Kalyani, Nadia - 741235, West Bengal, India
-Near Kalyani railway station — well connected by Sealdah-Kalyani local trains.
+ABOUT: Established 2001 | Part of JIS Group | AICTE approved | MAKAUT affiliated | NBA accredited | ISO certified
+LOCATION: Block A, Phase-III, Kalyani, Nadia - 741235, West Bengal
+Near Kalyani railway station — Sealdah-Kalyani local train line
 
 CONTACT:
 - Admission: admission.jisce@jisgroup.org
 - Website: www.jiscollege.ac.in
 - Phone: 9432011490 / 8697743363
 
-ACCREDITATIONS: AICTE approved | MAKAUT affiliated | NBA accredited departments | ISO certified
+PROGRAMS: B.Tech (10 branches), M.Tech (4), MCA, MBA, BCA, BBA, Diploma (EE/ME)
 
-FACILITIES: Central Library (91,497+ books), Well-equipped labs, Computer labs with internet, Boys & Girls Hostels, Cafeteria, Sports complex, Gymnasium, Medical center, Wi-Fi campus, Auditorium, Seminar halls, Bus transport
+PLACEMENTS: TCS, Infosys, Wipro, Cognizant, Capgemini, HCL, Accenture, IBM, Tech Mahindra, Amazon, Deloitte | Avg: 3.5-6 LPA | Highest: 15+ LPA
 
-PLACEMENTS: Dedicated T&P Cell | Top recruiters: TCS, Infosys, Wipro, Cognizant, Capgemini, HCL, Accenture, IBM, Tech Mahindra, Amazon, Deloitte | Avg Package: 3.5-6 LPA | Highest: 15+ LPA
+FACILITIES: Library, Labs, Hostels, Cafeteria, Sports Complex, Gym, Medical Center, Wi-Fi, Auditorium, Bus Transport
 
-CLUBS & ACTIVITIES: Coding Club, Robotics Club, IEEE Student Branch, CSI Chapter, NSS, Music, Dance, Drama, Sports (Cricket, Football, Badminton, Basketball)
-Annual Tech Fest: "Virtuoso" | Annual Cultural Fest: "Utsab"
+ADMISSION: B.Tech via WBJEE/JEE Main | M.Tech via GATE | MCA via JECA | MBA via JEMAT/MAT/CAT
 
-ADMISSION:
-- B.Tech: WBJEE / JEE Main rank
-- M.Tech: GATE score
-- MCA: JECA (Joint Entrance for MCA)
-- MBA: JEMAT / MAT / CAT
+ANTI-RAGGING: Zero-tolerance policy | 24x7 helpline
 
-ANTI-RAGGING: Zero-tolerance policy | Anti-ragging committee | 24x7 helpline active
-
-TRANSPORT: College buses from Kolkata, Barasat, Dum Dum, Baguiati, and nearby areas
+QUICK LINKS:
+- Notice Board: https://www.jiscollege.ac.in/notice-board.php
+- AIML & CST Dept: https://www.jiscollege.ac.in/aiml/index.html
+- AIML Admission: https://www.jiscollege.ac.in/aiml/admission.html
+- AIML Academics: https://www.jiscollege.ac.in/aiml/academics.html
+- AIML Research: https://www.jiscollege.ac.in/aiml/research.html
+- AIML Campus: https://www.jiscollege.ac.in/aiml/campus.html
 `;

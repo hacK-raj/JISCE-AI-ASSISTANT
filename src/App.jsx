@@ -240,9 +240,24 @@ export default function App() {
 
     } catch (err) {
       const errTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      // Friendly error — never show raw API error text to the user
+      let friendlyMsg = '';
+      const e = err.message || '';
+
+      if (/rate limit|too many request|429|tpm|tokens per minute/i.test(e)) {
+        friendlyMsg = `⏳ **Please wait a moment**\n\nThe AI is receiving too many requests right now. Please wait **10–15 seconds** and send your message again.\n\nFor urgent queries, contact JISCE directly:\n📞 **9432011490 / 8697743363**\n📧 admission.jisce@jisgroup.org`;
+      } else if (/api key|not set|unauthorized|401/i.test(e)) {
+        friendlyMsg = `🔑 **Setup Required**\n\nPlease add your Groq API key to the \`.env\` file:\n\`VITE_GROQ_API_KEY=your_key_here\`\n\nGet a **free** key at [console.groq.com](https://console.groq.com)`;
+      } else if (/fetch|network|failed to fetch/i.test(e)) {
+        friendlyMsg = `📶 **Connection Issue**\n\nCould not reach the AI service. Please check your internet connection and try again.`;
+      } else {
+        friendlyMsg = `❓ Something went wrong. Please try again in a moment.\n\nFor direct help:\n📞 **9432011490 / 8697743363**\n📧 admission.jisce@jisgroup.org`;
+      }
+
       const errMsg = {
         role: 'assistant',
-        content: `⚠️ **Connection Error**\n\n${err.message}\n\nPlease check your **VITE_GROQ_API_KEY** in the \`.env\` file.\nGet a free key at [console.groq.com](https://console.groq.com)`,
+        content: friendlyMsg,
         time: errTime
       };
       const final = [...updated, errMsg];
