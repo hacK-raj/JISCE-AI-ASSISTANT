@@ -63,7 +63,9 @@ function detectQueryType(text) {
 
   const isFee      = /\bfee|fees|cost|tuition|how much|charges|semester fee|total fee|pay|payment\b/.test(t);
   const isTotal    = /\btotal\b/.test(t) && !semNum;
-  const isSyllabus = /\bsyllabus|subjects|curriculum|papers|course content|pdf|download\b/.test(t);
+  // ✅ NEW — 'papers' removed, research queries blocked from syllabus path
+  const isResearch = /\bresearch|publication|published|journal|paper\b/.test(t);
+  const isSyllabus = !isResearch && /\bsyllabus|subjects|curriculum|course content|pdf|download\b/.test(t);
   const isWebsite  = /\bwebsite|site|web|url|link|portal\b/.test(t);
   const isContact  = /\bcontact|phone|number|email|mail|call|helpline|admission\b/.test(t);
   const isLocation = /\blocation|address|where|how to reach|how to come|distance|nearby|railway|train\b/.test(t);

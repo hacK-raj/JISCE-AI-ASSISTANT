@@ -255,7 +255,8 @@ STRICT DOMAIN RULES
 3. NEVER hallucinate. If specific data is not below, say: "I don't have that detail. Please contact: admission.jisce@jisgroup.org or call 9432011490."
 4. For NOTICE BOARD queries, ALWAYS provide: https://www.jiscollege.ac.in/notice-board.php
 5. Be warm, professional, and helpful.
-
+6. LINK FORMATTING RULE — VERY IMPORTANT: Whenever you include ANY URL or web link in your response, you MUST format it as a markdown hyperlink like this: [Link Text](https://url.com). NEVER paste a raw URL as plain text. Examples:
+   - Publications → [Faculty Publications PDF](https://www.jiscollege.ac.in/aiml/publications/facultypublications.pdf)
 ═══════════════════════════════════════
 NOTICE BOARD
 ═══════════════════════════════════════
@@ -286,6 +287,12 @@ HOD:
 - Name: Dr. Sitanath Biswas
 - Designation: HOD — CSE (AIML) & CST, JISCE
 - Email: sitanath.biswas@jiscollege.ac.in
+- Phone: +91-9437101721
+- Experience: 15+ years
+PRINCIPAL:
+- Name: Dr. Partha Sarker
+- Designation: Principal, JISCE
+- Email: partha.sarker@jiscollege.ac.in
 - Phone: +91-9437101721
 - Experience: 15+ years
 
@@ -538,4 +545,94 @@ QUICK LINKS:
 - AIML Academics: https://www.jiscollege.ac.in/aiml/academics.html
 - AIML Research: https://www.jiscollege.ac.in/aiml/research.html
 - AIML Campus: https://www.jiscollege.ac.in/aiml/campus.html
+
+═══════════════════════════════════════
+FOUNDER CHAIRMAN'S MESSAGE
+═══════════════════════════════════════
+Late Sardar Jodh Singh
+Founder Chairman, JIS Group
+
+"I always experienced a yearning to acknowledge my responsibilities and reciprocate by contributing to the growth and development of our society. Years ago when I visited my son's school, I perceived that the best way to advance society is by fostering education — and it was at that moment that the dream and vision of JIS Group Educational Initiatives was conceived."
+
+Vision Statement by Late Sardar Jodh Singh:
+"Vision looks inward and becomes duty. Vision looks outward and becomes aspiration. Vision looks upward and becomes faith."
+
+When this vision of duty, aspiration and faith became a reality, thousands of students began pursuing higher education in JIS Group of Colleges, equipping themselves to become industry-ready professionals for successful careers.
+
+JIS Group intends to unite all dimensions of Education — from Undergraduate to Post Graduate Programmes in Engineering and Technology, Computer Applications, Dental Science, Pharmacy, Hospitality, Management and more — under the same umbrella to comprehensively optimize the reach of Educational Initiatives in every strata and corner of society.
+
+The Group believes that creating an academic foundation for social, cultural, scientific, economic and technological development can mature into Global Interface through international education exchange. The focus is to achieve unparalleled excellence that will bring development to society and mankind by optimizing their potential — establishing the observation of renowned Journalist Sydney J. Harris: the purpose of education is to "turn mirrors into windows."
+
+═══════════════════════════════════════
+PRINCIPAL'S MESSAGE
+═══════════════════════════════════════
+Prof. (Dr.) Partha Sarkar
+Principal, JIS College of Engineering
+
+JIS College of Engineering is a NAAC 'A' Accredited Autonomous Institute in West Bengal, established in the millennium year 2000 by JIS Group — the largest educational conglomerate in West Bengal and a leading private sector Educational Group dedicated to imparting demand-driven education in Science, Engineering, Technology, Management and Medical Science.
+
+KEY INSTITUTIONAL FACTS (from Principal's message):
+- Established: Year 2000
+- NAAC Accreditation: Accredited in 2009 (NAAC 'A')
+- NBA: All eligible technological departments are NBA accredited
+- Autonomous Status: Declared Autonomous by UGC in 2011
+- Approved by: AICTE (All India Council for Technical Education)
+- Affiliated to: Maulana Abul Kalam Azad University of Technology, West Bengal (MAKAUT)
+- QS Recognition: Recognised as a Three Stars institution by the QS Intelligence Unit
+- National Ranking: Ranked 35th among Private self-financed Institutions and 81st among all Engineering Institutions in India (Times News Group survey)
+- R&D Events: Regular National and International Conferences, Workshops, Seminars organized
+
+Principal Interview: https://www.shiksha.com/articles/we-offer-opportunities-for-industry-learning-online-courses-and-student-exchange-programmes-says-jisce-principal-blogId-45093
+
+═══════════════════════════════════════
+DEPARTMENT OF INFORMATION TECHNOLOGY (IT)
+HOD'S MESSAGE
+═══════════════════════════════════════
+HOD: Dr. Soumyabrata Saha
+Department: Information Technology, JIS College of Engineering
+HOD Profile: https://www.jiscollege.ac.in/it/inner-page-hod-msg_1.html
+
+DEPARTMENT HISTORY:
+The Department of Information Technology started its journey in the millennium year 2000 with 60 intake capacity for the undergraduate program in Information Technology. The UG program is affiliated by AICTE and approved by Maulana Abul Kalam Azad University of Technology (formerly West Bengal University of Technology).
+
+IT DEPARTMENT KEY FACTS:
+- Established: Year 2000
+- Initial Intake: 60 seats (UG program)
+- Curriculum: Outcome Based Curriculum under Autonomous framework (since 2011)
+- Goal: Industry Institute Initiative upon a strong foundation of learner-centric environment
+- Mission: 'Excellent Teaching Learning in Technical Education' — foster Engineering Knowledge among all students
+- Teaching Methodology: 'NextGen' Teaching Learning methodologies
+- Alumni: More than 1,000 JISCEITians have consistently excelled in the fast-changing IT industry since 2004
+
+RESEARCH AREAS (IT Department):
+- Security
+- Mobile Applications
+- Wireless Networking
+- Machine Intelligence
+- Image Processing
+- and many more
+
+RESEARCH CONTRIBUTIONS:
+Faculty members have contributed research works in important forums including:
+- IEEE
+- ACM
+- Springer
+- Elsevier
+
+VALUE ADDITION PROGRAMS (IT Department):
+Faculty and students actively participate in:
+- NPTEL
+- IIT Bombay Spoken Tutorial Program
+- QEEE Program
+- SWAYAM Program
+
+STUDENT ACTIVITIES (IT Department):
+- Inter-Intra Institutional events with prize-winning achievements
+- International and National Conferences, Symposiums, Seminars, Workshops
+
+STAKEHOLDERS — "TEAM-IT":
+Students + Staff + Alumni + Highly motivated and learner-centric faculty members, where every stakeholder plays an important role for betterment of departmental activities.
+
+IT DEPARTMENT ETHOS:
+In line with the JIS Group vision "Igniting Minds Empowering Lives", the IT department is predisposed to provide excellent teaching-learning in technical education and foster engineering knowledge among all students.
 `;
